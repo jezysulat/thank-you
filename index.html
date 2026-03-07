@@ -387,21 +387,38 @@
 
       .f-top {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
+        gap: 4px;
         text-align: center;
-        padding: 28px 20px;
+        padding: 32px 20px 20px;
+        border-bottom: none;
       }
-      .f-right { text-align: center; }
-      .f-right-sub { font-size: 11px; }
+      .f-brand {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .f-brand-text { align-items: center; }
+      .f-right {
+        text-align: center;
+        margin-top: 12px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,.06);
+        width: 100%;
+      }
+      .f-right-name { font-size: 10px; letter-spacing: .12em; }
+      .f-right-sub { font-size: 11px; line-height: 1.6; }
       .f-bottom {
         flex-direction: column;
-        gap: 14px;
+        align-items: center;
+        gap: 10px;
         text-align: center;
-        padding: 16px 20px 24px;
+        padding: 14px 20px 24px;
+        border-top: 1px solid rgba(255,255,255,.06);
       }
       .f-legal-links {
         justify-content: center;
-        gap: 20px;
+        gap: 24px;
       }
       .f-legal-links a { font-size: 11px; }
       .f-legal-left { font-size: 10px; color: rgba(255,255,255,.2); }

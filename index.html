@@ -196,11 +196,15 @@
     .step-list li {
       font-family: var(--font-body); font-size: 14px;
       color: rgba(234,230,223,.65); line-height: 1.6;
-      display: flex; align-items: flex-start; gap: 12px;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .step-list li .li-text {
+      display: inline;
+      flex: 1;
     }
     .step-list li::before {
       content: '◈'; color: var(--gold); font-size: 10px;
-      margin-top: 5px; flex-shrink: 0; opacity: .7;
+      flex-shrink: 0; opacity: .7;
     }
     .step-list li strong { color: var(--offwhite); font-weight: 600; }
 
@@ -323,12 +327,28 @@
       nav { padding: 0 24px; }
       .hero { padding: 100px 24px 60px; }
       .steps-wrap { padding: 0 24px 80px; }
-      .step { padding: 36px 28px; }
+      .step { padding: 36px 24px; }
       .closing-wrap { padding: 60px 24px; }
       .f-top { flex-direction: column; gap: 24px; text-align: center; padding: 32px 24px; }
       .f-right { text-align: center; }
       .f-bottom { flex-direction: column; gap: 12px; text-align: center; padding: 16px 24px 20px; }
       .f-legal-links { justify-content: center; }
+
+      /* Fix list item wrapping on mobile */
+      .step-list li {
+        font-size: 15px;
+        line-height: 1.7;
+        align-items: baseline;
+      }
+      .step-list { gap: 14px; }
+
+      /* Full-width join button on mobile */
+      .btn-join {
+        width: 100%;
+        justify-content: center;
+        padding: 18px 24px;
+        box-sizing: border-box;
+      }
     }
   </style>
 </head>
@@ -371,16 +391,16 @@
       <h2 class="step-h2">An Onboarding Email Has Been Sent.</h2>
       <p class="step-body">Check the address you provided. Inside, you will find:</p>
       <ul class="step-list">
-        <li><strong>The Paving Period orientation</strong></li>
-        <li><strong>Your next instructions</strong></li>
-        <li><strong>Important reminders</strong> for the 45-Day Paving Period</li>
+        <li><span class="li-text"><strong>The Paving Period orientation</strong></span></li>
+        <li><span class="li-text"><strong>Your next instructions</strong></span></li>
+        <li><span class="li-text"><strong>Important reminders</strong> for the 45-Day Paving Period</span></li>
       </ul>
       <p class="step-body">This email will guide you through the discipline and expectations required inside The Collective.</p>
       <p class="step-body" style="margin-top:8px;">Please check:</p>
       <ul class="step-list">
-        <li>Inbox</li>
-        <li>Promotions folder</li>
-        <li>Spam folder</li>
+        <li><span class="li-text">Inbox</span></li>
+        <li><span class="li-text">Promotions folder</span></li>
+        <li><span class="li-text">Spam folder</span></li>
       </ul>
       <p class="step-note">If you cannot find the email within 5–10 minutes, check your other folders.</p>
     </div>
@@ -391,9 +411,9 @@
       <h2 class="step-h2">The Collective Operates Through a Private Digital Environment.</h2>
       <p class="step-body">This is where Aspirants begin their paving journey. Inside the community, you will:</p>
       <ul class="step-list">
-        <li>Connect with fellow <strong>Aspiring Catalysts</strong></li>
-        <li>Receive <strong>updates and important announcements</strong></li>
-        <li>Access guidance for the <strong>45-Day Paving Period</strong></li>
+        <li><span class="li-text">Connect with fellow <strong>Aspiring Catalysts</strong></span></li>
+        <li><span class="li-text">Receive <strong>updates and important announcements</strong></span></li>
+        <li><span class="li-text">Access guidance for the <strong>45-Day Paving Period</strong></span></li>
       </ul>
       <div class="btn-join-wrap">
         <a class="btn-join" href="https://web.facebook.com/share/g/1ELSZoPeAo/" target="_blank" rel="noopener">
@@ -412,9 +432,9 @@
       <p class="step-body">Every participant begins as an <strong style="color:var(--offwhite);">Aspirant</strong> and must complete the 45-Day Paving Period to earn full integration into the ecosystem.</p>
       <p class="step-body">Completion demonstrates:</p>
       <ul class="step-list">
-        <li><strong>Discipline</strong></li>
-        <li><strong>Alignment</strong> with the mission</li>
-        <li><strong>Commitment</strong> to advancing economies through leadership</li>
+        <li><span class="li-text"><strong>Discipline</strong></span></li>
+        <li><span class="li-text"><strong>Alignment</strong> with the mission</span></li>
+        <li><span class="li-text"><strong>Commitment</strong> to advancing economies through leadership</span></li>
       </ul>
       <p class="step-body" style="margin-top:8px;">Those who finish the paving period will graduate as <strong style="color:var(--gold);">Catalysts</strong> — and become part of the ecosystem shaping global economic impact.</p>
     </div>

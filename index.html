@@ -293,7 +293,7 @@
     }
     .f-brand { display: flex; align-items: center; gap: 14px; }
     .f-brand img { height: 36px; width: auto; opacity: .65; }
-    .f-brand-text { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+    .f-brand-text { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
     .f-name {
       font-family: var(--font-headline); font-size: 13px; font-weight: 600;
       letter-spacing: .2em; text-transform: uppercase; color: var(--gold); line-height: 1;
@@ -302,19 +302,10 @@
       font-family: var(--font-sub); font-size: 9px;
       color: rgba(201,164,77,.45); letter-spacing: .18em; text-transform: uppercase;
     }
-    .f-right { text-align: right; }
-    .f-right-name {
-      font-family: var(--font-sub); font-size: 11px; font-weight: 600;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: rgba(201,164,77,.6); margin-bottom: 6px;
-    }
-    .f-right-sub {
-      font-family: var(--font-body); font-size: 12px;
-      color: rgba(255,255,255,.3); font-style: italic;
-    }
+
     .f-bottom {
       padding: 18px 48px 22px;
-      display: flex; align-items: center; justify-content: center; gap: 40px;
+      display: flex; align-items: center; justify-content: space-between;
     }
     .f-legal-left {
       font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,.25);
@@ -458,7 +449,6 @@
           <span class="f-tagline">Shaping Leaders. Advancing Economies.</span>
         </div>
       </div>
-
     </div>
     <div class="f-bottom">
       <span class="f-legal-left">The Collective © 2026. All Rights Reserved.</span>

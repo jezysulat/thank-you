@@ -146,22 +146,23 @@
     .steps-wrap {
       max-width: 860px; margin: 0 auto;
       padding: 0 48px 100px; position: relative; z-index: 1;
-      display: flex; flex-direction: column; gap: 2px;
+      display: flex; flex-direction: column; gap: 24px;
     }
 
     .step {
       background: rgba(255,255,255,.025);
       border: 1px solid rgba(201,164,77,.12);
-      padding: 48px 52px;
+      padding: 52px 56px;
       position: relative;
+      border-radius: 2px;
       transition: background .3s, border-color .3s;
     }
     .step:hover {
       background: rgba(255,255,255,.04);
       border-color: rgba(201,164,77,.25);
     }
-    .step:first-child { border-radius: 2px 2px 0 0; }
-    .step:last-child { border-radius: 0 0 2px 2px; }
+    .step:first-child { border-radius: 2px; }
+    .step:last-child { border-radius: 2px; }
 
     .step-num {
       font-family: var(--font-headline); font-size: 10px; font-weight: 600;
@@ -211,17 +212,22 @@
 
     /* ── JOIN BUTTON ── */
     .btn-join {
-      display: inline-flex; align-items: center; gap: 10px;
+      display: inline-flex; align-items: center; gap: 12px;
       background: var(--gold); color: var(--black);
-      font-family: var(--font-headline); font-size: 11px;
-      font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
-      text-decoration: none; padding: 16px 36px;
+      font-family: var(--font-headline); font-size: 12px;
+      font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      text-decoration: none; padding: 20px 48px;
       margin-top: 28px;
+      box-shadow: 0 0 32px rgba(201,164,77,.35), 0 4px 16px rgba(201,164,77,.2);
+      border: 1px solid rgba(201,164,77,.6);
       transition: opacity .2s, transform .2s, box-shadow .2s;
     }
+    .btn-join-wrap {
+      display: flex; justify-content: center;
+    }
     .btn-join:hover {
-      opacity: .9; transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,164,77,.25);
+      opacity: .92; transform: translateY(-3px);
+      box-shadow: 0 0 48px rgba(201,164,77,.5), 0 8px 28px rgba(201,164,77,.3);
     }
     .btn-join svg { stroke: var(--black); flex-shrink: 0; }
 
@@ -287,7 +293,7 @@
     }
     .f-brand { display: flex; align-items: center; gap: 14px; }
     .f-brand img { height: 36px; width: auto; opacity: .65; }
-    .f-brand-text { display: flex; flex-direction: column; gap: 4px; }
+    .f-brand-text { display: flex; flex-direction: column; gap: 4px; align-items: center; }
     .f-name {
       font-family: var(--font-headline); font-size: 13px; font-weight: 600;
       letter-spacing: .2em; text-transform: uppercase; color: var(--gold); line-height: 1;
@@ -308,7 +314,7 @@
     }
     .f-bottom {
       padding: 18px 48px 22px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: center; gap: 40px;
     }
     .f-legal-left {
       font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,.25);
@@ -323,105 +329,15 @@
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
-      nav { padding: 0 20px; }
-
-      .hero { padding: 96px 20px 52px; }
-      .hero-h1 { font-size: clamp(28px, 7vw, 42px); letter-spacing: -.01em; }
-      .hero-editorial { font-size: clamp(16px, 4.5vw, 22px); }
-      .hero-body { font-size: 14px; line-height: 1.8; }
-
-      .steps-wrap { padding: 0 16px 72px; gap: 3px; }
-
-      .step { padding: 28px 20px; }
-
-      /* Fix step-num label wrapping on mobile */
-      .step-num {
-        font-size: 9px;
-        letter-spacing: .2em;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .step-num::after { min-width: 20px; }
-
-      .step-h2 { font-size: clamp(18px, 5vw, 24px); margin-bottom: 14px; }
-
-      .step-body { font-size: 14px; line-height: 1.75; }
-
-      /* Fix list items — prevent bold/text from splitting into columns */
-      .step-list li,
-      .next-list li {
-        display: block;
-        padding-left: 22px;
-        position: relative;
-        gap: 0;
-      }
-      .step-list li::before {
-        position: absolute;
-        left: 0;
-        top: 5px;
-        margin-top: 0;
-      }
-      .next-list li {
-        padding-left: 40px;
-      }
-      .next-list li::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin-top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .step-list li strong { display: inline; }
-
-      .btn-join {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 24px;
-        font-size: 10px;
-      }
-
-      .closing-wrap { padding: 52px 20px; }
-      .closing-quote { font-size: clamp(18px, 5vw, 24px); }
-
-      .f-top {
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        text-align: center;
-        padding: 32px 20px 20px;
-        border-bottom: none;
-      }
-      .f-brand {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .f-brand-text { align-items: center; }
-      .f-right {
-        text-align: center;
-        margin-top: 12px;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255,255,255,.06);
-        width: 100%;
-      }
-      .f-right-name { font-size: 10px; letter-spacing: .12em; }
-      .f-right-sub { font-size: 11px; line-height: 1.6; }
-      .f-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-        padding: 14px 20px 24px;
-        border-top: 1px solid rgba(255,255,255,.06);
-      }
-      .f-legal-links {
-        justify-content: center;
-        gap: 24px;
-      }
-      .f-legal-links a { font-size: 11px; }
-      .f-legal-left { font-size: 10px; color: rgba(255,255,255,.2); }
+      nav { padding: 0 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .steps-wrap { padding: 0 24px 80px; }
+      .step { padding: 36px 28px; }
+      .closing-wrap { padding: 60px 24px; }
+      .f-top { flex-direction: column; gap: 24px; text-align: center; padding: 32px 24px; }
+      .f-right { text-align: center; }
+      .f-bottom { flex-direction: column; gap: 12px; text-align: center; padding: 16px 24px 20px; }
+      .f-legal-links { justify-content: center; }
     }
   </style>
 </head>
@@ -488,12 +404,14 @@
         <li>Receive <strong>updates and important announcements</strong></li>
         <li>Access guidance for the <strong>45-Day Paving Period</strong></li>
       </ul>
-      <a class="btn-join" href="https://web.facebook.com/share/g/1ELSZoPeAo/" target="_blank" rel="noopener">
-        Join the Community
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8">
-          <path d="M3 8h10M9 4l4 4-4 4"/>
-        </svg>
-      </a>
+      <div class="btn-join-wrap">
+        <a class="btn-join" href="https://web.facebook.com/share/g/1ELSZoPeAo/" target="_blank" rel="noopener">
+          Join the Community
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
     </div>
 
     <!-- Reminder -->
@@ -545,8 +463,8 @@
     <div class="f-bottom">
       <span class="f-legal-left">The Collective © 2026. All Rights Reserved.</span>
       <div class="f-legal-links">
-        <a href="terms.html">Terms &amp; Conditions</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
       </div>
     </div>
   </footer>
